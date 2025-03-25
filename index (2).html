@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Webcrumbs Plugin</title>
+    <style>
+@import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200);
+
+/*! tailwindcss v3.4.11 | MIT License | https://tailwindcss.com*/
+*,
+:after,
+:before {
+  border: 0 solid #e5e7eb;
+  box-sizing: border-box;
+}
+:after,
+:before {
+  --tw-content: "";
+}
+:host,
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  font-family:
+    Open Sans,
+    ui-sans-serif,
+    system-ui,
+    sans-serif,
+    Apple Color Emoji,
+    Segoe UI Emoji,
+    Segoe UI Symbol,
+    Noto Color Emoji;
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  line-height: inherit;
+  margin: 0;
+}
+hr {
+  border-top-width: 1px;
+  color: inherit;
+  height: 0;
+}
+abbr:where([title]) {
+  text-decoration: underline dotted;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+b,
+strong {
+  font-weight: bolder;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    Liberation Mono,
+    Courier New,
+    monospace;
+  font-feature-settings: normal;
+  font-size: 1em;
+  font-variation-settings: normal;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+table {
+  border-collapse: collapse;
+  border-color: inherit;
+  text-indent: 0;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font-family: inherit;
+  font-feature-settings: inherit;
+  font-size: 100%;
+  font-variation-settings: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+input:where([type="button"]),
+input:where([type="reset"]),
+input:where([type="submit"]) {
+  -webkit-appearance: button;
+  background-color: transparent;
+  background-image: none;
+}
+:-moz-focusring {
+  outline: auto;
+}
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+progress {
+  vertical-align: baseline;
+}
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+summary {
+  display: list-item;
+}
+blockquote,
+dd,
+dl,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+pre {
+  margin: 0;
+}
+fieldset {
+  margin: 0;
+}
+fieldset,
+legend {
+  padding: 0;
+}
+menu,
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+dialog {
+  padding: 0;
+}
+textarea {
+  resize: vertical;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af;
+  opacity: 1;
+}
+[role="button"],
+button {
+  cursor: pointer;
+}
+:disabled {
+  cursor: default;
+}
+audio,
+canvas,
+embed,
+iframe,
+img,
+object,
+svg,
+video {
+  display: block;
+  vertical-align: middle;
+}
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+[hidden] {
+  display: none;
+}
+*,
+:after,
+:before {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x: ;
+  --tw-pan-y: ;
+  --tw-pinch-zoom: ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position: ;
+  --tw-gradient-via-position: ;
+  --tw-gradient-to-position: ;
+  --tw-ordinal: ;
+  --tw-slashed-zero: ;
+  --tw-numeric-figure: ;
+  --tw-numeric-spacing: ;
+  --tw-numeric-fraction: ;
+  --tw-ring-inset: ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgba(59, 130, 246, 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur: ;
+  --tw-brightness: ;
+  --tw-contrast: ;
+  --tw-grayscale: ;
+  --tw-hue-rotate: ;
+  --tw-invert: ;
+  --tw-saturate: ;
+  --tw-sepia: ;
+  --tw-drop-shadow: ;
+  --tw-backdrop-blur: ;
+  --tw-backdrop-brightness: ;
+  --tw-backdrop-contrast: ;
+  --tw-backdrop-grayscale: ;
+  --tw-backdrop-hue-rotate: ;
+  --tw-backdrop-invert: ;
+  --tw-backdrop-opacity: ;
+  --tw-backdrop-saturate: ;
+  --tw-backdrop-sepia: ;
+  --tw-contain-size: ;
+  --tw-contain-layout: ;
+  --tw-contain-paint: ;
+  --tw-contain-style: ;
+}
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x: ;
+  --tw-pan-y: ;
+  --tw-pinch-zoom: ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position: ;
+  --tw-gradient-via-position: ;
+  --tw-gradient-to-position: ;
+  --tw-ordinal: ;
+  --tw-slashed-zero: ;
+  --tw-numeric-figure: ;
+  --tw-numeric-spacing: ;
+  --tw-numeric-fraction: ;
+  --tw-ring-inset: ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgba(59, 130, 246, 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur: ;
+  --tw-brightness: ;
+  --tw-contrast: ;
+  --tw-grayscale: ;
+  --tw-hue-rotate: ;
+  --tw-invert: ;
+  --tw-saturate: ;
+  --tw-sepia: ;
+  --tw-drop-shadow: ;
+  --tw-backdrop-blur: ;
+  --tw-backdrop-brightness: ;
+  --tw-backdrop-contrast: ;
+  --tw-backdrop-grayscale: ;
+  --tw-backdrop-hue-rotate: ;
+  --tw-backdrop-invert: ;
+  --tw-backdrop-opacity: ;
+  --tw-backdrop-saturate: ;
+  --tw-backdrop-sepia: ;
+  --tw-contain-size: ;
+  --tw-contain-layout: ;
+  --tw-contain-paint: ;
+  --tw-contain-style: ;
+}
+#webcrumbs .absolute {
+  position: absolute;
+}
+#webcrumbs .relative {
+  position: relative;
+}
+#webcrumbs .inset-0 {
+  inset: 0;
+}
+#webcrumbs .mb-1 {
+  margin-bottom: 4px;
+}
+#webcrumbs .mb-2 {
+  margin-bottom: 8px;
+}
+#webcrumbs .mb-4 {
+  margin-bottom: 16px;
+}
+#webcrumbs .mb-6 {
+  margin-bottom: 24px;
+}
+#webcrumbs .mb-8 {
+  margin-bottom: 32px;
+}
+#webcrumbs .mr-1 {
+  margin-right: 4px;
+}
+#webcrumbs .mr-2 {
+  margin-right: 8px;
+}
+#webcrumbs .mr-3 {
+  margin-right: 12px;
+}
+#webcrumbs .mt-2 {
+  margin-top: 8px;
+}
+#webcrumbs .mt-3 {
+  margin-top: 12px;
+}
+#webcrumbs .mt-4 {
+  margin-top: 16px;
+}
+#webcrumbs .mt-6 {
+  margin-top: 24px;
+}
+#webcrumbs .inline-block {
+  display: inline-block;
+}
+#webcrumbs .flex {
+  display: flex;
+}
+#webcrumbs .inline-flex {
+  display: inline-flex;
+}
+#webcrumbs .grid {
+  display: grid;
+}
+#webcrumbs .h-10 {
+  height: 40px;
+}
+#webcrumbs .h-28 {
+  height: 112px;
+}
+#webcrumbs .h-3 {
+  height: 12px;
+}
+#webcrumbs .h-32 {
+  height: 128px;
+}
+#webcrumbs .h-64 {
+  height: 256px;
+}
+#webcrumbs .h-full {
+  height: 100%;
+}
+#webcrumbs .w-10 {
+  width: 40px;
+}
+#webcrumbs .w-3 {
+  width: 12px;
+}
+#webcrumbs .w-\[1200px\] {
+  width: 1200px;
+}
+#webcrumbs .w-full {
+  width: 100%;
+}
+#webcrumbs .min-w-full {
+  min-width: 100%;
+}
+#webcrumbs .flex-grow {
+  flex-grow: 1;
+}
+#webcrumbs .transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+#webcrumbs .cursor-pointer {
+  cursor: pointer;
+}
+#webcrumbs .list-none {
+  list-style-type: none;
+}
+#webcrumbs .grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+#webcrumbs .grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+#webcrumbs .flex-row {
+  flex-direction: row;
+}
+#webcrumbs .items-center {
+  align-items: center;
+}
+#webcrumbs .justify-center {
+  justify-content: center;
+}
+#webcrumbs .justify-between {
+  justify-content: space-between;
+}
+#webcrumbs .gap-4 {
+  gap: 16px;
+}
+#webcrumbs .gap-6 {
+  gap: 24px;
+}
+#webcrumbs .gap-8 {
+  gap: 32px;
+}
+#webcrumbs :is(.space-x-2 > :not([hidden]) ~ :not([hidden])) {
+  --tw-space-x-reverse: 0;
+  margin-left: calc(8px * (1 - var(--tw-space-x-reverse)));
+  margin-right: calc(8px * var(--tw-space-x-reverse));
+}
+#webcrumbs :is(.space-x-3 > :not([hidden]) ~ :not([hidden])) {
+  --tw-space-x-reverse: 0;
+  margin-left: calc(12px * (1 - var(--tw-space-x-reverse)));
+  margin-right: calc(12px * var(--tw-space-x-reverse));
+}
+#webcrumbs :is(.space-x-4 > :not([hidden]) ~ :not([hidden])) {
+  --tw-space-x-reverse: 0;
+  margin-left: calc(16px * (1 - var(--tw-space-x-reverse)));
+  margin-right: calc(16px * var(--tw-space-x-reverse));
+}
+#webcrumbs :is(.space-x-6 > :not([hidden]) ~ :not([hidden])) {
+  --tw-space-x-reverse: 0;
+  margin-left: calc(24px * (1 - var(--tw-space-x-reverse)));
+  margin-right: calc(24px * var(--tw-space-x-reverse));
+}
+#webcrumbs :is(.space-y-2 > :not([hidden]) ~ :not([hidden])) {
+  --tw-space-y-reverse: 0;
+  margin-bottom: calc(8px * var(--tw-space-y-reverse));
+  margin-top: calc(8px * (1 - var(--tw-space-y-reverse)));
+}
+#webcrumbs :is(.divide-y > :not([hidden]) ~ :not([hidden])) {
+  --tw-divide-y-reverse: 0;
+  border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+  border-top-width: calc(1px * (1 - var(--tw-divide-y-reverse)));
+}
+#webcrumbs :is(.divide-gray-200 > :not([hidden]) ~ :not([hidden])) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-divide-opacity));
+}
+#webcrumbs .overflow-hidden {
+  overflow: hidden;
+}
+#webcrumbs .overflow-x-auto {
+  overflow-x: auto;
+}
+#webcrumbs .overflow-y-auto {
+  overflow-y: auto;
+}
+#webcrumbs .whitespace-nowrap {
+  white-space: nowrap;
+}
+#webcrumbs .rounded {
+  border-radius: 12px;
+}
+#webcrumbs .rounded-full {
+  border-radius: 9999px;
+}
+#webcrumbs .rounded-lg {
+  border-radius: 24px;
+}
+#webcrumbs .rounded-md {
+  border-radius: 18px;
+}
+#webcrumbs .rounded-b-lg {
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+#webcrumbs .rounded-l-md {
+  border-bottom-left-radius: 18px;
+  border-top-left-radius: 18px;
+}
+#webcrumbs .rounded-r-md {
+  border-bottom-right-radius: 18px;
+  border-top-right-radius: 18px;
+}
+#webcrumbs .border {
+  border-width: 1px;
+}
+#webcrumbs .border-b-2 {
+  border-bottom-width: 2px;
+}
+#webcrumbs .border-l-0 {
+  border-left-width: 0;
+}
+#webcrumbs .border-gray-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+#webcrumbs .border-gray-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+#webcrumbs .border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+#webcrumbs .bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+#webcrumbs .bg-emerald-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(16 185 129 / var(--tw-bg-opacity));
+}
+#webcrumbs .bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+#webcrumbs .bg-gray-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+#webcrumbs .bg-green-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 252 231 / var(--tw-bg-opacity));
+}
+#webcrumbs .bg-indigo-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(199 210 254 / var(--tw-bg-opacity));
+}
+#webcrumbs .bg-indigo-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(129 140 248 / var(--tw-bg-opacity));
+}
+#webcrumbs .bg-indigo-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(79 70 229 / var(--tw-bg-opacity));
+}
+#webcrumbs .bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+#webcrumbs .bg-yellow-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 249 195 / var(--tw-bg-opacity));
+}
+#webcrumbs .bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+#webcrumbs .from-indigo-600 {
+  --tw-gradient-from: #4f46e5 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(79, 70, 229, 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+#webcrumbs .to-blue-600 {
+  --tw-gradient-to: #2563eb var(--tw-gradient-to-position);
+}
+#webcrumbs .p-1 {
+  padding: 4px;
+}
+#webcrumbs .p-2 {
+  padding: 8px;
+}
+#webcrumbs .p-4 {
+  padding: 16px;
+}
+#webcrumbs .p-6 {
+  padding: 24px;
+}
+#webcrumbs .p-8 {
+  padding: 32px;
+}
+#webcrumbs .px-2 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+#webcrumbs .px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+#webcrumbs .px-4 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+#webcrumbs .px-6 {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+#webcrumbs .px-8 {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+#webcrumbs .py-1 {
+  padding-bottom: 4px;
+  padding-top: 4px;
+}
+#webcrumbs .py-2 {
+  padding-bottom: 8px;
+  padding-top: 8px;
+}
+#webcrumbs .py-3 {
+  padding-bottom: 12px;
+  padding-top: 12px;
+}
+#webcrumbs .py-4 {
+  padding-bottom: 16px;
+  padding-top: 16px;
+}
+#webcrumbs .py-6 {
+  padding-bottom: 24px;
+  padding-top: 24px;
+}
+#webcrumbs .pl-2 {
+  padding-left: 8px;
+}
+#webcrumbs .pt-2 {
+  padding-top: 8px;
+}
+#webcrumbs .text-left {
+  text-align: left;
+}
+#webcrumbs .text-right {
+  text-align: right;
+}
+#webcrumbs .font-sans {
+  font-family:
+    Open Sans,
+    ui-sans-serif,
+    system-ui,
+    sans-serif,
+    Apple Color Emoji,
+    Segoe UI Emoji,
+    Segoe UI Symbol,
+    Noto Color Emoji;
+}
+#webcrumbs .text-2xl {
+  font-size: 24px;
+  line-height: 31.200000000000003px;
+}
+#webcrumbs .text-lg {
+  font-size: 18px;
+  line-height: 27px;
+}
+#webcrumbs .text-sm {
+  font-size: 14px;
+  line-height: 21px;
+}
+#webcrumbs .text-xl {
+  font-size: 20px;
+  line-height: 28px;
+}
+#webcrumbs .text-xs {
+  font-size: 12px;
+  line-height: 19.200000000000003px;
+}
+#webcrumbs .font-bold {
+  font-weight: 700;
+}
+#webcrumbs .font-medium {
+  font-weight: 500;
+}
+#webcrumbs .font-semibold {
+  font-weight: 600;
+}
+#webcrumbs .uppercase {
+  text-transform: uppercase;
+}
+#webcrumbs .leading-5 {
+  line-height: 1.25rem;
+}
+#webcrumbs .tracking-tight {
+  letter-spacing: -0.025em;
+}
+#webcrumbs .tracking-wider {
+  letter-spacing: 0.05em;
+}
+#webcrumbs .text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+#webcrumbs .text-gray-600 {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+#webcrumbs .text-gray-700 {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+#webcrumbs .text-gray-800 {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+#webcrumbs .text-green-800 {
+  --tw-text-opacity: 1;
+  color: rgb(22 101 52 / var(--tw-text-opacity));
+}
+#webcrumbs .text-indigo-600 {
+  --tw-text-opacity: 1;
+  color: rgb(79 70 229 / var(--tw-text-opacity));
+}
+#webcrumbs .text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+#webcrumbs .text-yellow-800 {
+  --tw-text-opacity: 1;
+  color: rgb(133 77 14 / var(--tw-text-opacity));
+}
+#webcrumbs .shadow-lg {
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
+    0 4px 6px -4px var(--tw-shadow-color);
+}
+#webcrumbs .shadow-lg,
+#webcrumbs .shadow-md {
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+#webcrumbs .shadow-md {
+  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),
+    0 2px 4px -2px var(--tw-shadow-color);
+}
+#webcrumbs .shadow-sm {
+  --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+#webcrumbs .transition-all {
+  transition-duration: 0.15s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+#webcrumbs .transition-colors {
+  transition-duration: 0.15s;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+#webcrumbs .transition-shadow {
+  transition-duration: 0.15s;
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+#webcrumbs .transition-transform {
+  transition-duration: 0.15s;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+#webcrumbs .duration-200 {
+  transition-duration: 0.2s;
+}
+#webcrumbs .duration-300 {
+  transition-duration: 0.3s;
+}
+#webcrumbs {
+  font-family: Open Sans !important;
+  font-size: 16px !important;
+}
+#webcrumbs .hover\:bg-gray-100:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+#webcrumbs .hover\:bg-gray-200:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+#webcrumbs .hover\:bg-gray-50:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+#webcrumbs .hover\:bg-indigo-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(67 56 202 / var(--tw-bg-opacity));
+}
+#webcrumbs .hover\:text-gray-900:hover {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+#webcrumbs .hover\:text-indigo-200:hover {
+  --tw-text-opacity: 1;
+  color: rgb(199 210 254 / var(--tw-text-opacity));
+}
+#webcrumbs .hover\:text-indigo-800:hover {
+  --tw-text-opacity: 1;
+  color: rgb(55 48 163 / var(--tw-text-opacity));
+}
+#webcrumbs .hover\:text-indigo-900:hover {
+  --tw-text-opacity: 1;
+  color: rgb(49 46 129 / var(--tw-text-opacity));
+}
+#webcrumbs .hover\:text-red-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+#webcrumbs .hover\:underline:hover {
+  text-decoration-line: underline;
+}
+#webcrumbs .hover\:shadow-lg:hover {
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
+    0 4px 6px -4px var(--tw-shadow-color);
+}
+#webcrumbs .hover\:shadow-lg:hover,
+#webcrumbs .hover\:shadow-md:hover {
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+#webcrumbs .hover\:shadow-md:hover {
+  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),
+    0 2px 4px -2px var(--tw-shadow-color);
+}
+#webcrumbs .focus\:border-indigo-500:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(99 102 241 / var(--tw-border-opacity));
+}
+#webcrumbs .focus\:ring-2:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0
+    var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0
+    calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+    var(--tw-shadow, 0 0 #0000);
+}
+#webcrumbs .focus\:ring-indigo-500:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(99 102 241 / var(--tw-ring-opacity));
+}
+#webcrumbs :is(.group[open] .group-open\:rotate-180) {
+  --tw-rotate: 180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+      body {
+        line-height: inherit;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        min-width: 100vw;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #ffffff, #d4d4d4);
+      }
+    </style>
+  </head>
+  <body>
+<div id="webcrumbs"><div class="w-[1200px] bg-white font-sans"> <header class="bg-gradient-to-r from-indigo-600 to-blue-600 text-white py-6 px-8 rounded-b-lg shadow-lg"> <div class="flex justify-between items-center"> <div class="flex items-center space-x-3"> <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M2 17L12 22L22 17" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M2 12L12 17L22 12" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </svg> <h1 class="text-2xl font-bold tracking-tight">KinFin Explorer</h1> </div> <nav> <ul class="flex space-x-6 text-sm font-medium"> <li><a href="https://webcrumbs.cloud/placeholder" class="hover:text-indigo-200 transition-colors duration-300 border-b-2 border-white">Dashboard</a></li> <li><a href="https://webcrumbs.cloud/placeholder" class="hover:text-indigo-200 transition-colors duration-300">Documentation</a></li> <li><a href="https://webcrumbs.cloud/placeholder" class="hover:text-indigo-200 transition-colors duration-300">API</a></li> <li><a href="https://webcrumbs.cloud/placeholder" class="hover:text-indigo-200 transition-colors duration-300">About</a></li> </ul> </nav> </div> </header> <main class="p-8"> <div class="flex justify-between items-center mb-8"> <h2 class="text-xl font-semibold text-gray-800">Protein Clustering Analysis</h2> <div class="flex space-x-4"> <button class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors duration-300 shadow-md flex items-center"> <span class="material-symbols-outlined mr-2">add</span> New Analysis </button> <button class="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors duration-300 shadow-sm flex items-center"> <span class="material-symbols-outlined mr-2">help_outline</span> Help </button> </div> </div> <div class="grid grid-cols-3 gap-8 mb-8"> <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300"> <h3 class="font-medium text-lg mb-4 text-gray-800">1. Select Clustering Dataset</h3> <select class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"> <option value="">Select a pre-computed clustering</option> <option value="dataset1">Mollusk Proteomes (214 species)</option> <option value="dataset2">Vertebrate Sample (150 species)</option> <option value="dataset3">Arthropod Collection (310 species)</option> </select> <p class="mt-3 text-sm text-gray-600">Choose from available pre-computed protein clustering datasets</p> </div> <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300"> <h3 class="font-medium text-lg mb-4 text-gray-800">2. Define Taxa Sets</h3> <div class="flex mb-2"> <input type="text" placeholder="Search taxa..." class="flex-grow p-2 border border-gray-300 rounded-l-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"/> <button class="bg-gray-100 border border-l-0 border-gray-300 p-2 rounded-r-md hover:bg-gray-200 transition-colors duration-300"> <span class="material-symbols-outlined">search</span> </button> </div> <div class="border border-gray-300 rounded-md h-28 mb-2 p-2 overflow-y-auto bg-gray-50"> <div class="flex justify-between items-center p-1 bg-gray-100 mb-1 rounded text-sm"> <span>Bivalvia</span> <button class="text-gray-500 hover:text-red-500 transition-colors duration-300"> <span class="material-symbols-outlined text-sm">close</span> </button> </div> <div class="flex justify-between items-center p-1 bg-gray-100 mb-1 rounded text-sm"> <span>Gastropoda</span> <button class="text-gray-500 hover:text-red-500 transition-colors duration-300"> <span class="material-symbols-outlined text-sm">close</span> </button> </div> </div> <div class="flex justify-between"> <button class="text-sm text-indigo-600 hover:text-indigo-800 transition-colors duration-300">+ Create Set</button> <span class="text-xs text-gray-500">2 taxa selected</span> </div> </div> <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300"> <h3 class="font-medium text-lg mb-4 text-gray-800">3. Analysis Options</h3> <div class="mb-4"> <label class="flex items-center text-sm font-medium text-gray-700 mb-1"> Analysis Name </label> <input type="text" placeholder="My KinFin Analysis" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"/> </div> <details class="mb-2 group cursor-pointer"> <summary class="flex justify-between items-center text-sm font-medium text-gray-700 mb-1 list-none"> <span>Advanced Options</span> <span class="material-symbols-outlined transform group-open:rotate-180 transition-transform duration-300">expand_more</span> </summary> <div class="pl-2 pt-2 text-sm text-gray-600"> <div class="flex items-center mb-2"> <input type="checkbox" id="includeAllTaxa" class="mr-2"/> <label for="includeAllTaxa">Include all taxa in dataset</label> </div> <div class="flex items-center"> <input type="checkbox" id="exportResults" class="mr-2"/> <label for="exportResults">Export results when complete</label> </div> </div> </details> <button class="w-full mt-4 px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors duration-300 shadow-md flex items-center justify-center"> <span class="material-symbols-outlined mr-2">play_arrow</span> Run Analysis </button> </div> </div> <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 mb-8"> <div class="flex justify-between items-center mb-4"> <h3 class="font-medium text-lg text-gray-800">Recent Analyses</h3> <div class="flex space-x-2"> <button class="p-1 hover:bg-gray-100 rounded transition-colors duration-300"> <span class="material-symbols-outlined">refresh</span> </button> <button class="p-1 hover:bg-gray-100 rounded transition-colors duration-300"> <span class="material-symbols-outlined">filter_list</span> </button> </div> </div> <div class="overflow-x-auto"> <table class="min-w-full divide-y divide-gray-200"> <thead class="bg-gray-50"> <tr> <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th> <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Dataset</th> <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Taxa Sets</th> <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th> <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Created</th> <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th> </tr> </thead> <tbody class="bg-white divide-y divide-gray-200"> <tr class="hover:bg-gray-50 transition-colors duration-200"> <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-indigo-600">Mollusk Gene Family Analysis</td> <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Mollusk Proteomes</td> <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Bivalvia, Gastropoda</td> <td class="px-6 py-4 whitespace-nowrap"> <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Complete</span> </td> <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">10 minutes ago</td> <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"> <button class="text-indigo-600 hover:text-indigo-900 mr-3 transition-colors duration-300">View</button> <button class="text-gray-600 hover:text-gray-900 transition-colors duration-300"> <span class="material-symbols-outlined text-sm">more_vert</span> </button> </td> </tr> <tr class="hover:bg-gray-50 transition-colors duration-200"> <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-indigo-600">Vertebrate Comparison</td> <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Vertebrate Sample</td> <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Mammals, Birds, Reptiles</td> <td class="px-6 py-4 whitespace-nowrap"> <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Processing</span> </td> <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">25 minutes ago</td> <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"> <button class="text-indigo-600 hover:text-indigo-900 mr-3 transition-colors duration-300">View</button> <button class="text-gray-600 hover:text-gray-900 transition-colors duration-300"> <span class="material-symbols-outlined text-sm">more_vert</span> </button> </td> </tr> </tbody> </table> </div> </div> <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200"> <div class="flex justify-between items-center mb-6"> <h3 class="font-medium text-lg text-gray-800">Analysis Results Visualization</h3> <div class="flex items-center space-x-2"> <select class="p-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"> <option>Mollusk Gene Family Analysis</option> <option>Vertebrate Comparison</option> </select> <button class="p-1 hover:bg-gray-100 rounded transition-colors duration-300"> <span class="material-symbols-outlined">download</span> </button> </div> </div> <div class="grid grid-cols-2 gap-6"> <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-300"> <h4 class="text-sm font-medium text-gray-700 mb-2">Protein Clustering Distribution</h4> <div class="bg-gray-50 h-64 rounded-md flex items-center justify-center relative overflow-hidden"> <div class="absolute inset-0 flex items-center justify-center"> <svg class="w-full h-full" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M50,180 C100,100 150,150 200,50 C250,100 300,120 350,70" stroke="#4f46e5" stroke-width="2" fill="none"></path> <path d="M50,180 C100,150 150,170 200,120 C250,140 300,130 350,120" stroke="#3b82f6" stroke-width="2" fill="none"></path> <path d="M50,180 C100,160 150,140 200,150 C250,145 300,160 350,140" stroke="#10b981" stroke-width="2" fill="none"></path> <g> <circle cx="120" cy="125" r="5" fill="#4f46e5"></circle> <circle cx="180" cy="135" r="5" fill="#4f46e5"></circle> <circle cx="240" cy="95" r="5" fill="#4f46e5"></circle> <circle cx="300" cy="80" r="5" fill="#4f46e5"></circle> </g> <g> <circle cx="120" cy="155" r="5" fill="#3b82f6"></circle> <circle cx="180" cy="140" r="5" fill="#3b82f6"></circle> <circle cx="240" cy="130" r="5" fill="#3b82f6"></circle> <circle cx="300" cy="125" r="5" fill="#3b82f6"></circle> </g> <g> <circle cx="120" cy="165" r="5" fill="#10b981"></circle> <circle cx="180" cy="155" r="5" fill="#10b981"></circle> <circle cx="240" cy="150" r="5" fill="#10b981"></circle> <circle cx="300" cy="145" r="5" fill="#10b981"></circle> </g> </svg>  </div> </div> <div class="flex justify-between mt-2 text-xs text-gray-500"> <div class="flex items-center"> <span class="w-3 h-3 inline-block bg-indigo-600 rounded-full mr-1"></span> Bivalvia </div> <div class="flex items-center"> <span class="w-3 h-3 inline-block bg-blue-500 rounded-full mr-1"></span> Gastropoda </div> <div class="flex items-center"> <span class="w-3 h-3 inline-block bg-emerald-500 rounded-full mr-1"></span> Other Mollusca </div> </div> </div> <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-300"> <h4 class="text-sm font-medium text-gray-700 mb-2">Protein Family Composition</h4> <div class="bg-gray-50 h-64 rounded-md flex items-center justify-center relative overflow-hidden"> <div class="absolute inset-0 flex items-center justify-center"> <svg class="w-full h-full" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect x="75" y="30" width="50" height="150" fill="#4f46e5"></rect> <rect x="135" y="60" width="50" height="120" fill="#4f46e5"></rect> <rect x="195" y="90" width="50" height="90" fill="#4f46e5"></rect> <rect x="255" y="110" width="50" height="70" fill="#4f46e5"></rect> <rect x="75" y="30" width="50" height="80" fill="#818cf8"></rect> <rect x="135" y="60" width="50" height="60" fill="#818cf8"></rect> <rect x="195" y="90" width="50" height="40" fill="#818cf8"></rect> <rect x="255" y="110" width="50" height="30" fill="#818cf8"></rect> <rect x="75" y="30" width="50" height="20" fill="#c7d2fe"></rect> <rect x="135" y="60" width="50" height="15" fill="#c7d2fe"></rect> <rect x="195" y="90" width="50" height="10" fill="#c7d2fe"></rect> <rect x="255" y="110" width="50" height="5" fill="#c7d2fe"></rect> </svg>  </div> </div> <div class="flex justify-between mt-2 text-xs text-gray-500"> <div class="flex items-center"> <span class="w-3 h-3 inline-block bg-indigo-600 rounded-full mr-1"></span> Unique </div> <div class="flex items-center"> <span class="w-3 h-3 inline-block bg-indigo-400 rounded-full mr-1"></span> Shared </div> <div class="flex items-center"> <span class="w-3 h-3 inline-block bg-indigo-200 rounded-full mr-1"></span> Common </div> </div> </div> </div> <div class="mt-6 grid grid-cols-3 gap-4"> <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-300"> <h4 class="text-sm font-medium text-gray-700 mb-2">Overrepresented Families</h4> <div class="h-32 overflow-y-auto text-sm"> <table class="min-w-full"> <thead> <tr class="bg-gray-50"> <th class="py-1 px-2 text-left text-xs font-medium text-gray-500">Family ID</th> <th class="py-1 px-2 text-left text-xs font-medium text-gray-500">p-value</th> </tr> </thead> <tbody> <tr class="hover:bg-gray-50"> <td class="py-1 px-2">OG0000123</td> <td class="py-1 px-2">0.00024</td> </tr> <tr class="hover:bg-gray-50"> <td class="py-1 px-2">OG0002345</td> <td class="py-1 px-2">0.00089</td> </tr> <tr class="hover:bg-gray-50"> <td class="py-1 px-2">OG0003456</td> <td class="py-1 px-2">0.00127</td> </tr> <tr class="hover:bg-gray-50"> <td class="py-1 px-2">OG0005678</td> <td class="py-1 px-2">0.00356</td> </tr> </tbody> </table> </div> </div> <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-300"> <h4 class="text-sm font-medium text-gray-700 mb-2">Available Visualizations</h4> <ul class="text-sm space-y-2"> <li class="flex items-center"> <span class="material-symbols-outlined text-indigo-600 mr-2">analytics</span> <a href="https://webcrumbs.cloud/placeholder" class="text-indigo-600 hover:underline">Protein Family Distribution</a> </li> <li class="flex items-center"> <span class="material-symbols-outlined text-indigo-600 mr-2">donut_large</span> <a href="https://webcrumbs.cloud/placeholder" class="text-indigo-600 hover:underline">Cluster Size Distribution</a> </li> <li class="flex items-center"> <span class="material-symbols-outlined text-indigo-600 mr-2">scatter_plot</span> <a href="https://webcrumbs.cloud/placeholder" class="text-indigo-600 hover:underline">Protein Length Scatter Plot</a> </li> <li class="flex items-center"> <span class="material-symbols-outlined text-indigo-600 mr-2">account_tree</span> <a href="https://webcrumbs.cloud/placeholder" class="text-indigo-600 hover:underline">Phylogenetic Tree View</a> </li> </ul> </div> <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-300"> <h4 class="text-sm font-medium text-gray-700 mb-2">Analysis Summary</h4> <div class="text-sm space-y-2"> <div class="flex justify-between"> <span class="text-gray-600">Total Clusters:</span> <span class="font-medium">24,387</span> </div> <div class="flex justify-between"> <span class="text-gray-600">Clusters with ≥ 2 taxa:</span> <span class="font-medium">18,452</span> </div> <div class="flex justify-between"> <span class="text-gray-600">Proteins in Clusters:</span> <span class="font-medium">1,245,678</span> </div> <div class="flex justify-between"> <span class="text-gray-600">Taxa analyzed:</span> <span class="font-medium">214</span> </div> <div class="mt-3"> <button class="w-full text-sm px-3 py-1 bg-gray-100 hover:bg-gray-200 transition-colors duration-300 rounded flex items-center justify-center"> <span class="material-symbols-outlined text-gray-600 mr-1 text-sm">download</span> Download Full Report </button> </div> </div> </div> </div> </div> </main> </div></div>
+
+
+  </body>
+</html>
